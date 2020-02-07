@@ -1,1 +1,1 @@
-test centos
+test centos win10
