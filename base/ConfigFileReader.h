@@ -4,8 +4,7 @@
  *      日期：2020.2.7
  **/ 
 
-#ifndef __CONFIG_FILE_READER_H__
-#define __CONFIG_FILE_READER_H__
+#pragma once
 
 #include <map>
 #include <string>
@@ -30,4 +29,3 @@ private:
     std::string                         m_config_file;
 };
 
-#endif

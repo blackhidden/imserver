@@ -7,7 +7,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-#include "../base/Platform.h"
+//#include "../base/Platform.h"  暂不考虑跨平台
 #include "../base/Singleton.h"
 #include "../base/ConfigFileReader.h"
 #include "../base/AsyncLog.h"
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
         else
             Singleton<ChatServer>::Instance().enableLogPackageBinary(false);
     }
-   
+/*   
     std::string logFileFullPath;
 
     const char* logfilename = config.getConfigName("logfilename");
@@ -64,11 +64,11 @@ int main(int argc, char* argv[])
     {
         LOGF("Init UserManager failed, please check your database config..............");
     }
-
+*/
     const char* listenip = config.getConfigName("listenip");
     short listenport = (short)atol(config.getConfigName("listenport"));
     Singleton<ChatServer>::Instance().init(listenip, listenport, &g_mainLoop);
-
+/*
     const char* monitorlistenip = config.getConfigName("monitorlistenip");
     short monitorlistenport = (short)atol(config.getConfigName("monitorlistenport"));
     const char* monitortoken = config.getConfigName("monitortoken");
@@ -77,7 +77,7 @@ int main(int argc, char* argv[])
     const char* httplistenip = config.getConfigName("monitorlistenip");
     short httplistenport = (short)atol(config.getConfigName("httplistenport"));
     Singleton<HttpServer>::Instance().init(httplistenip, httplistenport, &g_mainLoop);
-
+*/
     LOGI("chatserver initialization completed, now you can use client to connect it.");
 
     g_mainLoop.loop();
