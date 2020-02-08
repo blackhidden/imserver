@@ -16,7 +16,7 @@ public:
     CConfigFileReader(const char *fileName);
     ~CConfigFileReader();
 
-    char* getConfigName(const char *fileName);
+    char* getConfigName(const char *key);
     int setConfigValue(const char *key, const char * value);
 
 private:
