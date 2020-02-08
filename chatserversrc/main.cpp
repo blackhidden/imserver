@@ -77,9 +77,9 @@ int main(int argc, char* argv[])
     const char* httplistenip = config.getConfigName("monitorlistenip");
     short httplistenport = (short)atol(config.getConfigName("httplistenport"));
     Singleton<HttpServer>::Instance().init(httplistenip, httplistenport, &g_mainLoop);
-*/
-    LOGI("chatserver initialization completed, now you can use client to connect it.");
 
+    LOGI("chatserver initialization completed, now you can use client to connect it.");
+*/
     g_mainLoop.loop();
 
     LOGI("exit chatserver.");

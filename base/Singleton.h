@@ -34,7 +34,7 @@ private:
 
 private:
     static T* value_;
-}
+};
 
 template<typename T>
 T* Singleton<T>::value_ = nullptr;
