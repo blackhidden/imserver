@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
         else
             Singleton<ChatServer>::Instance().enableLogPackageBinary(false);
     }
-/*   
+   
     std::string logFileFullPath;
 
     const char* logfilename = config.getConfigName("logfilename");
@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 #else
     CAsyncLog::init(logFileFullPath.c_str());
 #endif
-    
+/*    
     //初始化数据库配置
     const char* dbserver = config.getConfigName("dbserver");
     const char* dbuser = config.getConfigName("dbuser");
@@ -77,9 +77,9 @@ int main(int argc, char* argv[])
     const char* httplistenip = config.getConfigName("monitorlistenip");
     short httplistenport = (short)atol(config.getConfigName("httplistenport"));
     Singleton<HttpServer>::Instance().init(httplistenip, httplistenport, &g_mainLoop);
-
-    LOGI("chatserver initialization completed, now you can use client to connect it.");
 */
+    LOGI("chatserver initialization completed, now you can use client to connect it.");
+
     g_mainLoop.loop();
 
     LOGI("exit chatserver.");
