@@ -35,9 +35,9 @@ namespace net
         ///
         /// Must be thread safe. Usually be called from other threads.
         //interval单位是微妙
-        TimerId addTimer(const TimerCallback& cb, Timestamp when, int64_t interval, int64_t repeatCount);
+        TimerId addTimer(const TimerCallback& cb, TimeStamp when, int64_t interval, int64_t repeatCount);
 
-        TimerId addTimer(TimerCallback&& cb, Timestamp when, int64_t interval, int64_t repeatCount);
+        TimerId addTimer(TimerCallback&& cb, TimeStamp when, int64_t interval, int64_t repeatCount);
 
         void removeTimer(TimerId timerId);
 

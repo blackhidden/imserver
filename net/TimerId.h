@@ -24,5 +24,5 @@ namespace net
         Timer*  timer_;
         int64_t sequence_;
 
-    }
+    };
 }

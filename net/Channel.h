@@ -30,7 +30,7 @@ namespace net
 		Channel(EventLoop* loop, int fd);
 		~Channel();
 
-		void handleEvent(Timestamp receiveTime);
+		void handleEvent(TimeStamp receiveTime);
 		void setReadCallback(const ReadEventCallback& cb)
 		{
 			readCallback_ = cb;
@@ -81,7 +81,7 @@ namespace net
 
 	private:
 		bool update();
-		void handleEventWithGuard(Timestamp receiveTime);
+		void handleEventWithGuard(TimeStamp receiveTime);
 
 		static const int            kNoneEvent;
 		static const int            kReadEvent;

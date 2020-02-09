@@ -56,7 +56,7 @@ namespace net
 		///
 		/// Time when poll returns, usually means data arrival.
 		///
-		Timestamp pollReturnTime() const { return pollReturnTime_; }
+		TimeStamp pollReturnTime() const { return pollReturnTime_; }
 
 		int64_t iteration() const { return iteration_; }
 
@@ -140,7 +140,7 @@ namespace net
 		bool                                eventHandling_; /* atomic */
 		bool                                callingPendingFunctors_; /* atomic */
 		const std::thread::id               threadId_;
-		Timestamp                           pollReturnTime_;
+		TimeStamp                           pollReturnTime_;
 		std::unique_ptr<Poller>             poller_;
         std::unique_ptr<TimerQueue>         timerQueue_;
         int64_t                             iteration_;
