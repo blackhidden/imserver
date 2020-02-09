@@ -1,8 +1,8 @@
 /**
- *      功能：配置文件读取类
- *      作者：jiacobi
- *      日期：2020.2.7
- **/ 
+ *      @desc:  配置文件读取类
+ *      @author:jiacobi
+ *      @date:  2020.2.7
+ **/
 
 #include "ConfigFileReader.h"
 #include <stdio.h>

@@ -1,3 +1,9 @@
+/**
+ *      @desc:  时间戳类
+ *      @author:jiacobi
+ *      @date:  2020.2.8
+ **/
+
 #include "TimeStamp.h"
 #include <chrono>
 #include <ctime>

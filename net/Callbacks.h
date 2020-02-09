@@ -1,14 +1,14 @@
 /**
- *      功能：一些回调函数
- *      作者：jiacobi
- *      日期：2020.2.8
+ *      @desc:  一些回调函数
+ *      @author:jiacobi
+ *      @date:  2020.2.8
  **/
 
 #pragma once
 
 #include <functional>
 #include <memory>
-#include "../base/Timestamp.h"
+#include "../base/TimeStamp.h"
 
 // Adapted from google-protobuf stubs/common.h
 

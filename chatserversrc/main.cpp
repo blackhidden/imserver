@@ -1,13 +1,13 @@
 /**
- *      功能：聊天服务器入口函数
- *      作者：jiacobi
- *      日期：2020.2.7
+ *      @desc:  聊天服务器入口函数
+ *      @author:jiacobi
+ *      @date:  2020.2.7
  **/
 
 #include <iostream>
 #include <stdlib.h>
 
-//#include "../base/Platform.h"  暂不考虑跨平台
+#include "../base/Platform.h"  
 #include "../base/Singleton.h"
 #include "../base/ConfigFileReader.h"
 #include "../base/AsyncLog.h"

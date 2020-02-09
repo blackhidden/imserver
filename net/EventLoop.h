@@ -1,7 +1,7 @@
 /**
- *      功能：事件循环类
- *      作者：jiacobi
- *      日期：2020.2.8
+ *      @desc:  事件循环类
+ *      @author:jiacobi
+ *      @date:  2020.2.8
  **/
 
 #pragma once
@@ -22,5 +22,21 @@
 
 namespace net 
 {
-    
+    class EventLoop;
+    class Channel;
+    class Poller;
+    class CTimerHeap;
+
+    class EventLoop
+    {
+    public:
+
+
+    private:
+
+
+    private:
+
+
+    }
 }

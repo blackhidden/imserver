@@ -1,7 +1,7 @@
 /**
- *      功能：单例模式模板
- *      作者：jiacobi
- *      日期：2020.2.8
+ *      @desc:  单例模式模板
+ *      @author:jiacobi
+ *      @date:  2020.2.7
  **/
 
 #pragma once

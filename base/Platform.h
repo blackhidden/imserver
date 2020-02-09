@@ -1,7 +1,7 @@
 /**
- *      功能：平台相关头文件
- *      作者：jiacobi
- *      日期：2020.2.8
+ *      @desc:  平台相关头文件
+ *      @author:jiacobi
+ *      @date:  2020.2.7
  **/
 
 #pragma once

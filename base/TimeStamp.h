@@ -1,7 +1,7 @@
 /**
- *      功能：时间类
- *      作者：jiacobi
- *      日期：2020.2.8
+ *      @desc:  时间戳类
+ *      @author:jiacobi
+ *      @date:  2020.2.8
  **/
 
 #pragma once

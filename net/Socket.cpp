@@ -1,5 +1,5 @@
 /**
- *      功能：sockets类
- *      作者：jiacobi
- *      日期：2020.2.8
+ *      @desc:  sockets类
+ *      @author:jiacobi
+ *      @date:  2020.2.8
  **/
