@@ -14,7 +14,7 @@ public:
         if (value_ == nullptr) {
             value_ = new T();
         }
-        return value_;
+        return *value_;
     }
 
 private:
