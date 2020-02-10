@@ -103,7 +103,7 @@ namespace net
 
 	private:
 		enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };
-		void handleRead(Timestamp receiveTime);
+		void handleRead(TimeStamp receiveTime);
 		void handleWrite();
 		void handleClose();
 		void handleError();

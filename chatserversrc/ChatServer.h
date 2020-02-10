@@ -24,7 +24,7 @@ enum CLIENT_TYPE
     CLIENT_TYPE_ANDROID,
     CLIENT_TYPE_IOS,
     CLIENT_TYPE_MAC
-}
+};
 
 struct StoreUserInfo
 {
@@ -32,7 +32,7 @@ struct StoreUserInfo
     std::string username;
     std::string password;
     std::string nickname;
-}
+};
 
 class ChatServer final
 {
@@ -73,4 +73,4 @@ private:
     std::atomic_int                                m_sessionId{};
     std::mutex                                     m_idMutex;           //多线程之间保护m_baseUserId
     std::atomic_bool                               m_logPackageBinary;  //是否日志打印出包的二进制数据
-}
+};
