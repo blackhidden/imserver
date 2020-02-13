@@ -20,7 +20,7 @@ public:
 
 private:
     void loadFile(const char *fileName);
-    int writeFile(const char *fileName);
+    int writeFile(const char *fileName = NULL);
     void parseLine(char *line);
     char* trimSpace(char *name);
 

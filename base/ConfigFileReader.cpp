@@ -50,9 +50,9 @@ int CConfigFileReader::writeFile(const char *fileName)
 {
     FILE *fp = NULL;
     if (fileName == NULL) {
-        fp = fopen(m_config_file.c_str(), 'w');
+        fp = fopen(m_config_file.c_str(), "w");
     } else {
-        fp = fopen(fileName, 'w');
+        fp = fopen(fileName, "w");
     }
     if (fp == NULL) {
         return -1;
@@ -128,7 +128,7 @@ void CConfigFileReader::parseLine(char *line)
     }
 }
 
-char* CConfigFileReader::trimSpace(const char *name) 
+char* CConfigFileReader::trimSpace(char *name) 
 {
     //移除字符串开头的空格或Tab
     char *start_pos = name;
