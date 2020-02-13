@@ -106,5 +106,3 @@ namespace net
     };
 
 }// end namespace
-
-#endif //!__PROTOCOL_STREAM_H_
