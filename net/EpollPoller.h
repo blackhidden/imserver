@@ -21,7 +21,7 @@ namespace net
 		EPollPoller(EventLoop* loop);
 		virtual ~EPollPoller();
 
-		virtual Timestamp poll(int timeoutMs, ChannelList* activeChannels);
+		virtual TimeStamp poll(int timeoutMs, ChannelList* activeChannels);
 		virtual bool updateChannel(Channel* channel);
 		virtual void removeChannel(Channel* channel);
 
