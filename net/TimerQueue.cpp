@@ -29,23 +29,23 @@ namespace net
     //        return timerfd;
     //    }
 
-    //    struct timespec howMuchTimeFromNow(Timestamp when)
+    //    struct timespec howMuchTimeFromNow(TimeStamp when)
     //    {
     //        int64_t microseconds = when.microSecondsSinceEpoch()
-    //            - Timestamp::now().microSecondsSinceEpoch();
+    //            - TimeStamp::now().microSecondsSinceEpoch();
     //        if (microseconds < 100)
     //        {
     //            microseconds = 100;
     //        }
     //        struct timespec ts;
     //        ts.tv_sec = static_cast<time_t>(
-    //            microseconds / Timestamp::kMicroSecondsPerSecond);
+    //            microseconds / TimeStamp::kMicroSecondsPerSecond);
     //        ts.tv_nsec = static_cast<long>(
-    //            (microseconds % Timestamp::kMicroSecondsPerSecond) * 1000);
+    //            (microseconds % TimeStamp::kMicroSecondsPerSecond) * 1000);
     //        return ts;
     //    }
 
-    //    void readTimerfd(int timerfd, Timestamp now)
+    //    void readTimerfd(int timerfd, TimeStamp now)
     //    {
     //        uint64_t howmany;
     //        ssize_t n = ::read(timerfd, &howmany, sizeof howmany);
@@ -56,7 +56,7 @@ namespace net
     //        }
     //    }
 
-    //    void resetTimerfd(int timerfd, Timestamp expiration)
+    //    void resetTimerfd(int timerfd, TimeStamp expiration)
     //    {
     //        // wake up loop by timerfd_settime()
     //        struct itimerspec newValue;
@@ -103,14 +103,14 @@ TimerQueue::~TimerQueue()
     }
 }
 
-TimerId TimerQueue::addTimer(const TimerCallback& cb, Timestamp when, int64_t interval, int64_t repeatCount)
+TimerId TimerQueue::addTimer(const TimerCallback& cb, TimeStamp when, int64_t interval, int64_t repeatCount)
 {
     Timer* timer = new Timer(cb, when, interval);
     loop_->runInLoop(std::bind(&TimerQueue::addTimerInLoop, this, timer));
     return TimerId(timer, timer->sequence());
 }
 
-TimerId TimerQueue::addTimer(TimerCallback&& cb, Timestamp when, int64_t interval, int64_t repeatCount)
+TimerId TimerQueue::addTimer(TimerCallback&& cb, TimeStamp when, int64_t interval, int64_t repeatCount)
 {
     Timer* timer = new Timer(std::move(cb), when, interval, repeatCount);
     loop_->runInLoop(std::bind(&TimerQueue::addTimerInLoop, this, timer));
@@ -131,7 +131,7 @@ void TimerQueue::doTimer()
 {
     loop_->assertInLoopThread();
     
-    Timestamp now(Timestamp::now());
+    TimeStamp now(TimeStamp::now());
 
     for (auto iter = timers_.begin(); iter != timers_.end(); )
     {
@@ -233,7 +233,7 @@ void TimerQueue::cancelTimerInLoop(TimerId timerId, bool off)
     ////assert(timers_.size() == activeTimers_.size());
 }
 
-//std::vector<TimerQueue::Entry> TimerQueue::getExpired(Timestamp now)
+//std::vector<TimerQueue::Entry> TimerQueue::getExpired(TimeStamp now)
 //{
 //    assert(timers_.size() == activeTimers_.size());
 //    std::vector<Entry> expired;
@@ -255,9 +255,9 @@ void TimerQueue::cancelTimerInLoop(TimerId timerId, bool off)
 //    return expired;
 //}
 
-//void TimerQueue::reset(const std::vector<Entry> & expired, Timestamp now)
+//void TimerQueue::reset(const std::vector<Entry> & expired, TimeStamp now)
 //{
-//    Timestamp nextExpire;
+//    TimeStamp nextExpire;
 //
 //    for (std::vector<Entry>::const_iterator it = expired.begin();
 //        it != expired.end(); ++it)
@@ -292,7 +292,7 @@ void TimerQueue::insert(Timer* timer)
     loop_->assertInLoopThread();
     //assert(timers_.size() == activeTimers_.size());
     bool earliestChanged = false;
-    Timestamp when = timer->expiration();
+    TimeStamp when = timer->expiration();
     //TimerList::iterator it = timers_.begin();
     //if (it == timers_.end() || when < it->first)
     //{

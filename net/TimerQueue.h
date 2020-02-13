@@ -62,8 +62,8 @@ namespace net
         void cancelTimerInLoop(TimerId timerId, bool off);
         
         // move out all expired timers
-        //std::vector<Entry> getExpired(Timestamp now);
-        //void reset(const std::vector<Entry>& expired, Timestamp now);
+        //std::vector<Entry> getExpired(TimeStamp now);
+        //void reset(const std::vector<Entry>& expired, TimeStamp now);
 
         void insert(Timer* timer);
 
