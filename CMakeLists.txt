@@ -102,8 +102,8 @@ chatserversrc/MsgCacheManager.cpp
 chatserversrc/TcpSession.cpp
 chatserversrc/MonitorSession.cpp
 chatserversrc/MonitorServer.cpp
-
-
+chatserversrc/HttpSession.cpp
+chatserversrc/HttpServer.cpp
 chatserversrc/BussinessLogic.cpp)
 
 
