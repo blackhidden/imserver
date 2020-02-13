@@ -55,14 +55,14 @@ void EPollPoller::assertInLoopThread() const
     ownerLoop_->assertInLoopThread();
 }
 
-Timestamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels)
+TimeStamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels)
 {
     int numEvents = ::epoll_wait(epollfd_,
         &*events_.begin(),
         static_cast<int>(events_.size()),
         timeoutMs);
     int savedErrno = errno;
-    Timestamp now(Timestamp::now());
+    TimeStamp now(TimeStamp::now());
     if (numEvents > 0)
     {
         //LOG_TRACE << numEvents << " events happended";
