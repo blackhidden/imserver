@@ -27,7 +27,7 @@ void net::defaultConnectionCallback(const TcpConnectionPtr& conn)
     // do not call conn->forceClose(), because some users want to register message callback only.
 }
 
-void net::defaultMessageCallback(const TcpConnectionPtr&, Buffer* buf, Timestamp)
+void net::defaultMessageCallback(const TcpConnectionPtr&, Buffer* buf, TimeStamp)
 {
     buf->retrieveAll();
 }
@@ -324,14 +324,14 @@ void TcpConnection::connectDestroyed()
     channel_->remove();
 }
 
-void TcpConnection::handleRead(Timestamp receiveTime)
+void TcpConnection::handleRead(TimeStamp receiveTime)
 {
     loop_->assertInLoopThread();
     int savedErrno = 0;
     int32_t n = inputBuffer_.readFd(channel_->fd(), &savedErrno);
     if (n > 0)
     {
-        //messageCallback_指向CTcpSession::OnRead(const std::shared_ptr<TcpConnection>& conn, Buffer* pBuffer, Timestamp receiveTime)
+        //messageCallback_指向CTcpSession::OnRead(const std::shared_ptr<TcpConnection>& conn, Buffer* pBuffer, TimeStamp receiveTime)
         messageCallback_(shared_from_this(), &inputBuffer_, receiveTime);
     }
     else if (n == 0)
