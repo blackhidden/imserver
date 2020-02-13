@@ -1,8 +1,4 @@
 /**
- * 
- * zhangyl 2018.05.16
- */
-/**
  *      @desc:  URL编解码工具
  *      @author:jiacobi
  *      @date:  2020.2.11
