@@ -54,7 +54,7 @@ ChatSession::~ChatSession()
     }
 }
 
-void ChatSession::onRead(const std::shared_ptr<TcpConnection>& conn, Buffer* pBuffer, Timestamp receivTime)
+void ChatSession::onRead(const std::shared_ptr<TcpConnection>& conn, Buffer* pBuffer, TimeStamp receivTime)
 {
     while (true)
     {
