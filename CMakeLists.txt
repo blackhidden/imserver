@@ -100,8 +100,8 @@ chatserversrc/ChatSession.cpp
 chatserversrc/UserManager.cpp
 chatserversrc/MsgCacheManager.cpp
 chatserversrc/TcpSession.cpp
-
-
+chatserversrc/MonitorSession.cpp
+chatserversrc/MonitorServer.cpp
 
 
 chatserversrc/BussinessLogic.cpp)
