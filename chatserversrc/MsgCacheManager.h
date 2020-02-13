@@ -23,7 +23,7 @@ struct ChatMsgCache
     std::string chatmsg;
 };
 
-class MsgCatcheManager final
+class MsgCacheManager final
 {
 public:
     MsgCacheManager();
@@ -44,4 +44,4 @@ private:
     std::mutex                      m_mtNotifyMsgCache;
     std::list<ChatMsgCache>         m_listChatMsgCache;      //聊天消息缓存
     std::mutex                      m_mtChatMsgCache;
-}
+};
