@@ -68,12 +68,12 @@ int main(int argc, char* argv[])
     const char* listenip = config.getConfigName("listenip");
     short listenport = (short)atol(config.getConfigName("listenport"));
     Singleton<ChatServer>::Instance().init(listenip, listenport, &g_mainLoop);
-/*
+
     const char* monitorlistenip = config.getConfigName("monitorlistenip");
     short monitorlistenport = (short)atol(config.getConfigName("monitorlistenport"));
     const char* monitortoken = config.getConfigName("monitortoken");
     Singleton<MonitorServer>::Instance().init(monitorlistenip, monitorlistenport, &g_mainLoop, monitortoken);
-
+/*
     const char* httplistenip = config.getConfigName("monitorlistenip");
     short httplistenport = (short)atol(config.getConfigName("httplistenport"));
     Singleton<HttpServer>::Instance().init(httplistenip, httplistenport, &g_mainLoop);
