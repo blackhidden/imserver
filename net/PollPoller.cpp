@@ -19,12 +19,12 @@ PollPoller::~PollPoller()
 {
 }
 
-Timestamp PollPoller::poll(int timeoutMs, ChannelList* activeChannels)
+TimeStamp PollPoller::poll(int timeoutMs, ChannelList* activeChannels)
 {
     // XXX pollfds_ shouldn't change
     int numEvents = ::poll(&*pollfds_.begin(), pollfds_.size(), timeoutMs);
     int savedErrno = errno;
-    Timestamp now(Timestamp::now());
+    TimeStamp now(TimeStamp::now());
     if (numEvents > 0)
     {
         LOGD("%d  events happended", numEvents);
