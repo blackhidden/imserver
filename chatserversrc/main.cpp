@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 #else
     CAsyncLog::init(logFileFullPath.c_str());
 #endif
-/*    
+    
     //初始化数据库配置
     const char* dbserver = config.getConfigName("dbserver");
     const char* dbuser = config.getConfigName("dbuser");
@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
     {
         LOGF("Init UserManager failed, please check your database config..............");
     }
-*/
+
     const char* listenip = config.getConfigName("listenip");
     short listenport = (short)atol(config.getConfigName("listenport"));
     Singleton<ChatServer>::Instance().init(listenip, listenport, &g_mainLoop);
