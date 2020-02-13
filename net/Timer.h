@@ -16,8 +16,8 @@ namespace net
     class Timer
     {
     public:
-        Timer(const TimerCallback& cb, Timestamp when, int64_t interval, int64_t repeatCount = -1);           
-        Timer(TimerCallback&& cb, Timestamp when, int64_t interval);
+        Timer(const TimerCallback& cb, TimeStamp when, int64_t interval, int64_t repeatCount = -1);           
+        Timer(TimerCallback&& cb, TimeStamp when, int64_t interval);
 
         void run();        
 
@@ -31,11 +31,11 @@ namespace net
             canceled_ = off;
         }
 
-        Timestamp expiration() const { return expiration_; }
+        TimeStamp expiration() const { return expiration_; }
         int64_t getRepeatCount() const { return repeatCount_; }
         int64_t sequence() const { return sequence_; }
 
-        //void restart(Timestamp now);
+        //void restart(TimeStamp now);
 
         static int64_t numCreated() { return s_numCreated_; }
 
