@@ -53,5 +53,5 @@ namespace net
         bool                        canceled_;          //是否处于取消状态
 
         static std::atomic<int64_t> s_numCreated_;
-    }
+    };
 }
