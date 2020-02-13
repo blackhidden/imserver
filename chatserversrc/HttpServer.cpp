@@ -44,3 +44,25 @@ void HttpServer::onConnected(std::shared_ptr<TcpConnection> conn)
     }
 }
 
+//连接断开
+void HttpServer::onDisconnected(const std::shared_ptr<TcpConnection>& conn)
+{
+    //TODO: 这样的代码逻辑太混乱，需要优化
+    std::lock_guard<std::mutex> guard(m_sessionMutex);
+    for (auto iter = m_sessions.begin(); iter != m_sessions.end(); ++iter)
+    {
+        if ((*iter)->getConnectionPtr() == NULL)
+        {
+            LOGE("connection is NULL");
+            break;
+        }
+
+        //通过比对connection对象找到对应的session
+        if ((*iter)->getConnectionPtr() == conn)
+        {
+            m_sessions.erase(iter);
+            LOGI("monitor client disconnected: %s", conn->peerAddress().toIpPort().c_str());
+            break;
+        }
+    }
+}
