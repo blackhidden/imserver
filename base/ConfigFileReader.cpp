@@ -34,7 +34,7 @@ char* CConfigFileReader::getConfigName(const char *fileName)
 int CConfigFileReader::setConfigValue(const char *key, const char * value)
 {
     if (!m_load_ok) {
-        return NULL;
+        return -1;
     }
 
     std::map<std::string, std::string>::iterator it = m_config_map.find(key);
