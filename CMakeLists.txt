@@ -113,8 +113,12 @@ fileserversrc/FileSession.cpp
 fileserversrc/FileManager.cpp
 fileserversrc/TcpSession.cpp)
 
-
-
+set(imgserver_srcs
+imgserversrc/main.cpp
+fileserversrc/FileServer.cpp
+fileserversrc/FileSession.cpp
+fileserversrc/FileManager.cpp
+fileserversrc/TcpSession.cpp)
 
 add_executable(chatserver ${net_srcs} ${json_srcs}  ${chatserver_srcs} ${mysqlapi_srcs} ${mysqlmgr_srcs} ${zlib_srcs} ${utils_srcs})
 #光包含库目录是没用的，还必须使用TARGET_LINK_LIBRARIES链接该库
@@ -122,3 +126,6 @@ TARGET_LINK_LIBRARIES(chatserver mysqlclient)
 
 add_executable(fileserver ${net_srcs} ${fileserver_srcs} ${utils_srcs})
 TARGET_LINK_LIBRARIES(fileserver)
+
+add_executable(imgserver ${net_srcs} ${imgserver_srcs} ${utils_srcs})
+TARGET_LINK_LIBRARIES(imgserver)
